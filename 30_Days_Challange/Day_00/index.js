@@ -20,6 +20,10 @@ const markInexOnFirstUserMessage = async () => {
       }
     );
 
+    if (!apiResponse.ok) {
+      console.log("Something went wrong while fetching api");
+    }
+
     const jsonResponse = await apiResponse.json();
 
     if (jsonResponse.length) {
